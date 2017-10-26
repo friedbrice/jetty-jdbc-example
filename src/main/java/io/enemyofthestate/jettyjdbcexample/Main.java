@@ -9,77 +9,21 @@ import static org.httpobjects.util.Method.GET;
 
 public class Main {
 
-    void main(String[] args) {
+    public static void main(String[] args) {
 
         int port = 8080;
 
         HttpObject rootResource = new HttpObject("/") {
 
-            public Response delete(Request req) {
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
             public Response get(Request req){
                 return OK(Text("Hello, World!"));
-            }
-
-            public Response head(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response options(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response post(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response put(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response trace(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response patch(Request req){
-                return METHOD_NOT_ALLOWED(GET);
             }
         };
 
         HttpObject starWarsResource = new HttpObject("/starwars") {
 
-            public Response delete(Request req) {
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
             public Response get(Request req){
-                return null;
-            }
-
-            public Response head(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response options(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response post(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response put(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response trace(Request req){
-                return METHOD_NOT_ALLOWED(GET);
-            }
-
-            public Response patch(Request req){
-                return METHOD_NOT_ALLOWED(GET);
+                throw new RuntimeException("Not yet implemented.");
             }
         };
 
